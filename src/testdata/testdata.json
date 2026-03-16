@@ -1,0 +1,15 @@
+{
+  "loginpage": {
+    "url":"http://49.249.28.218:8098/",
+    "validUsername": "rmgyantra",
+    "validPassword": "rmgy@9999"
+  },
+  "contactspage":{
+    "contactName" : "abc123",
+    "orgName":"bca321",
+    "mobile":"9876540321",
+    "title":"Mr"
+  
+  
+  }
+}
