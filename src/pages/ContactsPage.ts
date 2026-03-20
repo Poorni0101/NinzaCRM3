@@ -12,6 +12,7 @@ export class ContactsPage extends BasePage {
  plusButton:Locator;
  createContact:Locator;
  //firstSelectButton:Locator;
+ dropdown:Locator;
   
     constructor(page :Page) {
         super(page);
@@ -27,6 +28,8 @@ export class ContactsPage extends BasePage {
         this.plusButton =  page.locator('button:has([data-icon="plus"])');
         //this.firstSelectButton = newPage.locator('tbody tr').first().locator('button.select-btn');
         this.createContact  =  page.getByRole('button', {name:'Create Contact'});
+
+        this.dropdown = page.locator('select.form-control');
     }
 
     
@@ -65,5 +68,8 @@ export class ContactsPage extends BasePage {
     await this.createContact.click();
   }
 
+  async getDropdown(){
+    return this.dropdown;
+  }
 }
    

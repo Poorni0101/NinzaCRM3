@@ -1,20 +1,22 @@
 import {test,expect} from '@playwright/test';
-import testdata from '../testdata/testdata.json';
-import { LoginPage } from '../pages/LoginPage';
-import { ContactsPage } from '../pages/ContactsPage';
-import { SelectCampaignPage } from '../pages/SelectCampaignPage';
+import testdata from '../../testdata/testdata.json';
+import { LoginPage } from '../../pages/LoginPage';
+import { ContactsPage } from '../../pages/ContactsPage';
+import { SelectCampaignPage } from '../../pages/SelectCampaignPage';
 let lp :LoginPage;
 let cp :ContactsPage;
 test.describe('Contact Page', () => {
 test.beforeEach(async ({page})=>{
-    lp = new LoginPage(page);
-   await lp.launchApp(testdata.loginpage.url);
-   await lp.enterUsername(testdata.loginpage.validUsername);
-    await lp.enterPassword(testdata.loginpage.validPassword);
-    await lp.clickLogin();
+   // lp = new LoginPage(page);
+ //  await lp.launchApp(testdata.loginpage.url);
+  // await lp.enterUsername(testdata.loginpage.validUsername);
+  //  await lp.enterPassword(testdata.loginpage.validPassword);
+   // await lp.clickLogin();
+    cp = new ContactsPage(page);
 });
 test('Create Contacts',async({page, context}) =>{
-    cp = new ContactsPage(page);
+  await page.goto('http://49.249.28.218:8098/contacts');
+   // cp = new ContactsPage(page);
     await cp.clickContacts();
     await cp.clickCreateContacts();
     await cp.enterContactName(testdata.contactspage.contactName);
@@ -31,8 +33,12 @@ test('Create Contacts',async({page, context}) =>{
      console.log("CONTACT CREATION DONE");
 });
 
+test('validate contacts dropdown options', async({page}) => {
+  await cp.getDropdown();
+});
+
 
 test.afterAll(async ({browser}) => {
-  await browser.close();
+ // await browser.close();
 });
 });

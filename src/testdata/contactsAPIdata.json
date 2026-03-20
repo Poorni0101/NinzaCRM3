@@ -1,0 +1,37 @@
+{
+  "createContact": {
+    "campaign": {
+      "campaignId": "CAM10310",
+      "campaignName": "string",
+      "campaignStatus": "string",
+       "createdAt": "2026-03-19T23:04:16.015Z",
+      "description": "string",
+      "expectedCloseDate": "string",
+      "targetAudience": "string",
+      "targetSize": 0
+    },
+    "contactName": "vs code",
+    "department": "string",
+    "officePhone": "1212121212",
+    "organizationName": "string",
+    "title": "string"
+  },
+
+  "updateContact": {
+    "campaign": {
+      "campaignId": "CAM10310",
+      "campaignName": "updated",
+      "campaignStatus": "yes",
+       "createdAt": "2026-03-19T23:34:52.324Z",
+      "description": "updated",
+      "expectedCloseDate": "string",
+      "targetAudience": "updated",
+      "targetSize": 0
+    },
+    "contactName": "updated user",
+    "department": "updated",
+    "officePhone": "2222222",
+    "organizationName": "updated",
+    "title": "mr"
+  }
+}
